@@ -96,7 +96,6 @@ export const ButtonLink = ({target, to, navigate, className, disabled, children,
       href={to}
       ref={elRef}
       target={target}
-      disabled={disabled}
       style={style(margin, fluid)}
       className={clsx(className, button())}
       onClick={e => {

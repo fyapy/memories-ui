@@ -23,6 +23,7 @@ export default ts.config(
       'perfectionist/sort-jsx-props': 'off',
       'perfectionist/sort-objects': 'off',
       'perfectionist/sort-classes': 'off',
+      'perfectionist/sort-modules': 'off',
       'perfectionist/sort-imports': ['error', {
         internalPattern: ['pages/*', 'stores/*', 'ui/*', 'utils/*', 'styles', 'router'],
         newlinesBetween: 'never',

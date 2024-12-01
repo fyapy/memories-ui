@@ -1,4 +1,3 @@
-// import {PropsWithChildren, MouseEventHandler, createContext, useContext, ReactNode, useEffect, useState, useRef} from 'preact'
 import {useContext, useEffect, useState, useRef} from 'preact/hooks'
 import {ComponentChildren, createContext, VNode, JSX} from 'preact'
 import {MatchFunction, match} from 'path-to-regexp'
@@ -48,6 +47,7 @@ const initialContext = (): RouterContext => ({
 
 const Context = createContext(initialContext())
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useRouter = () => useContext(Context)!
 
 function removeSearch(path: string) {
