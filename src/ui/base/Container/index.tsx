@@ -2,7 +2,7 @@ import {ComponentChildren} from 'preact'
 import {style} from 'styles'
 
 interface ContainerProps {
-  className?: string
+  class?: string
   children: ComponentChildren
 }
 
@@ -20,10 +20,10 @@ const wrapper = style({
   display: 'flex',
 })
 
-export const Container = ({className, children}: ContainerProps) => {
-  const classes = typeof className === 'string' ? `${className} ${wrapper()}` : wrapper()
+export const Container = ({class: cn, children}: ContainerProps) => {
+  const classes = typeof cn === 'string' ? `${cn} ${wrapper()}` : wrapper()
 
-  return <div className={classes}>{children}</div>
+  return <div class={classes}>{children}</div>
 }
 
 Container.variables = variables

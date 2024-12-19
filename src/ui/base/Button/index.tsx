@@ -54,12 +54,12 @@ export interface ButtonProps {
   type?: 'submit' | 'button'
   disabled?: boolean
   fluid?: boolean
-  className?: string
+  class?: string
   onClick?(e: MouseEvent): void
   children: ComponentChildren
 }
 
-export const Button = ({type = 'submit', className, disabled, children, onClick, margin, fluid}: ButtonProps) => {
+export const Button = ({type = 'submit', class: cn, disabled, children, onClick, margin, fluid}: ButtonProps) => {
   const elRef = useRef<HTMLButtonElement>(null)
   const [width, height, id] = useButton(elRef, children)
 
@@ -69,7 +69,7 @@ export const Button = ({type = 'submit', className, disabled, children, onClick,
       ref={elRef}
       disabled={disabled}
       style={style(margin, fluid)}
-      className={clsx(className, button())}
+      class={clsx(cn, button())}
       onClick={onClick}
     >
       {gradient(width, height, id, disabled)}
@@ -87,7 +87,7 @@ export interface ButtonLinkProps extends ButtonProps {
   to: string
 }
 
-export const ButtonLink = ({target, to, navigate, className, disabled, children, onClick, margin, fluid}: ButtonLinkProps) => {
+export const ButtonLink = ({target, to, navigate, class: cn, disabled, children, onClick, margin, fluid}: ButtonLinkProps) => {
   const elRef = useRef<HTMLAnchorElement>(null)
   const [width, height, id] = useButton(elRef, children)
 
@@ -97,7 +97,7 @@ export const ButtonLink = ({target, to, navigate, className, disabled, children,
       ref={elRef}
       target={target}
       style={style(margin, fluid)}
-      className={clsx(className, button())}
+      class={clsx(cn, button())}
       onClick={e => {
         if (typeof navigate !== 'undefined') {
           e.preventDefault()

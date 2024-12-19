@@ -203,9 +203,9 @@ export const Route = ({path, component: Component, guard}: {
 }
 
 
-export const Link = ({to, className, onClick, children}: {
+export const Link = ({to, class: cn, onClick, children}: {
   to: string
-  className?: string
+  class?: string
   children: ComponentChildren
   onClick?(event: MouseEvent): void
 }) => {
@@ -219,7 +219,7 @@ export const Link = ({to, className, onClick, children}: {
         onClick?.(e)
       }}
       href={to}
-      className={className}
+      class={cn}
     >
       {children}
     </a>

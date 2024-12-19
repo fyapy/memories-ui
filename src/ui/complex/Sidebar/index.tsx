@@ -11,7 +11,7 @@ interface SidebarProps {
 }
 
 export const Sidebar = ({links, pathname, navigate}: SidebarProps) => (
-  <div className={css.wrapper()}>
+  <div class={css.wrapper()}>
     {links.map(({to, text, onClick}) => {
       if (typeof to === 'string') {
         const style = pathname === to ? 'background-color: #232324;' : undefined
@@ -20,7 +20,7 @@ export const Sidebar = ({links, pathname, navigate}: SidebarProps) => (
           <a
             style={style}
             href={to}
-            className={css.link()}
+            class={css.link()}
             onClick={e => {
               e.preventDefault()
               navigate(to)
@@ -32,7 +32,7 @@ export const Sidebar = ({links, pathname, navigate}: SidebarProps) => (
       }
 
       return (
-        <div className={css.link()} onClick={onClick}>
+        <div class={css.link()} onClick={onClick}>
           {text}
         </div>
       )

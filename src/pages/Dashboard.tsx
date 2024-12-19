@@ -25,7 +25,7 @@ export const Dashboard = ({children}: {children: ComponentChildren}) => {
     <Container>
       <Sidebar links={links} pathname={pathname} navigate={navigate} />
 
-      <div className={article()}>
+      <div class={article()}>
         {children}
       </div>
     </Container>
