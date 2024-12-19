@@ -1,37 +1,38 @@
-import tsconfigPaths from 'vite-tsconfig-paths'
-import preact from '@preact/preset-vite'
+// import tsconfigPaths from 'vite-tsconfig-paths'
+import {fileURLToPath} from 'node:url'
+import vue from '@vitejs/plugin-vue'
 import {defineConfig} from 'vite'
 import dts from 'vite-plugin-dts'
 
 export default defineConfig({
-  base: '/',
   server: {port: 5400},
   plugins: [
-    preact(),
-    tsconfigPaths(),
+    // tsconfigPaths(),
+    vue(),
     dts({
       include: ['src'],
+      rollupTypes: true,
       staticImport: true,
       insertTypesEntry: true,
-      rollupTypes: true,
       tsconfigPath: './tsconfig.app.json',
     }),
   ],
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
   build: {
-    copyPublicDir: false,
+    // ssr: true,
     lib: {
       formats: ['es'],
-      entry: './src/index.tsx',
+      entry: './src/index.ts',
       fileName: 'index',
     },
+    emptyOutDir: true,
+    copyPublicDir: false,
     rollupOptions: {
-      external: [
-        'preact',
-        'preact/jsx-runtime',
-        'preact/jsx-dev-runtime',
-        '@preact/signals',
-        '@stitches/core',
-      ],
+      external: ['vue', '@stitches/core'],
     },
   },
 })

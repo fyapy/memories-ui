@@ -1,18 +1,18 @@
-import {useLayoutEffect, EffectCallback, useEffect, Inputs, useRef} from 'preact/hooks'
+// import {useLayoutEffect, EffectCallback, useEffect, Inputs, useRef} from 'preact/hooks'
 
-export const useUpdate = (fn: EffectCallback, deps: Inputs = [], layout = false) => {
-  const isMount = useRef(true)
+// export const useUpdate = (fn: EffectCallback, deps: Inputs = [], layout = false) => {
+//   const isMount = useRef(true)
 
-  const effect = layout ? useLayoutEffect : useEffect
+//   const effect = layout ? useLayoutEffect : useEffect
 
-  effect(() => {
-    if (isMount.current) {
-      isMount.current = false
-    } else {
-      fn()
-    }
-  }, deps)
-}
+//   effect(() => {
+//     if (isMount.current) {
+//       isMount.current = false
+//     } else {
+//       fn()
+//     }
+//   }, deps)
+// }
 
 // export const useMedia = (width = screenXsMobile) => {
 //   const getMediaMatch = useCallback(() => window.innerWidth < width - 1, [])
