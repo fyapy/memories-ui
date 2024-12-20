@@ -1,4 +1,4 @@
-import {ButtonSmall, Table} from 'ui/base'
+import {ButtonSmall, Table, Card} from 'ui/base'
 
 const namesData = [
   {id: 1, name: 'Jorge'},
@@ -8,7 +8,7 @@ const namesData = [
 
 export const Tables = () => {
   return (
-    <div>
+    <Card>
       <Table
         data={namesData}
         columns={[
@@ -28,6 +28,6 @@ export const Tables = () => {
           },
         ]}
       />
-    </div>
+    </Card>
   )
 }

@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "vite",
     "lint": "eslint .",
-    "build": "tsc -b && tsup"
+    "build": "tsup"
   },
   "devDependencies": {
     "@preact/preset-vite": "2.9.3",

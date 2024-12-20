@@ -3,24 +3,32 @@ import {style} from 'styles'
 export const css = {
   empty: style({
     height: '120px',
-  
+
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-  
+
     textAlign: 'center',
     fontSize: '20px',
   }),
   table: style({
     width: '100%',
-    borderSpacing: 0,
+    borderSpacing: '0',
+
+    'tbody tr:last-of-type td > *': {
+      marginBottom: '0',
+
+      '&:before': {
+        bottom: '0',
+      },
+    },
   }),
   th: style({
     padding: '0 10px 8px',
 
     color: '#969696',
-    fontSize: 14,
-    fontWeight: 500,
+    fontSize: '14px',
+    fontWeight: '500',
     textAlign: 'left',
 
     '&[data-right="true"]': {
@@ -30,16 +38,16 @@ export const css = {
   }),
   td: style({
     position: 'relative',
-    zIndex: 1,
+    zIndex: '1',
 
-    padding: 0,
+    padding: '0',
 
     whiteSpace: 'pre-line',
 
     '> *': {
       margin: '0 0 10px',
       padding: '0 10px',
-      minHeight: 38,
+      minHeight: '38px',
 
       display: 'flex',
       alignItems: 'center',
@@ -47,21 +55,21 @@ export const css = {
       '&:before': {
         content: '',
         position: 'absolute',
-        inset: 0,
-        bottom: 10,
-        zIndex: -1,
+        inset: '0',
+        bottom: '10px',
+        zIndex: '-1',
 
         backgroundColor: 'rgba(255, 255, 255, .1)',
       },
     },
 
     '&:first-of-type > *:before': {
-      borderTopLeftRadius: 10,
-      borderBottomLeftRadius: 10,
+      borderTopLeftRadius: '10px',
+      borderBottomLeftRadius: '10px',
     },
     '&:last-of-type > *:before': {
-      borderTopRightRadius: 10,
-      borderBottomRightRadius: 10,
+      borderTopRightRadius: '10px',
+      borderBottomRightRadius: '10px',
     },
 
     '[data-right="true"]': {

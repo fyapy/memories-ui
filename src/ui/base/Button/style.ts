@@ -21,11 +21,11 @@ export const button = style({
 
   ...center,
 
-  fontSize: 14,
-  fontWeight: 500,
+  fontSize: '14px',
+  fontWeight: '500',
   cursor: 'pointer',
   color: buttonColor.text,
-  borderRadius: 10,
+  borderRadius: '10px',
   boxShadow: `0px 1px 10px 0px ${buttonColor.boxShadow}`,
 
   transition: 'all .3s ease',
