@@ -7,6 +7,12 @@ export const css = {
     display: 'flex',
     flexDirection: 'column',
     flex: '1',
+
+    textarea: {
+      minHeight: '72px',
+
+      resize: 'none',
+    },
   }),
   label: style({
     margin: '0 0 9px 9px',
@@ -16,13 +22,13 @@ export const css = {
     color: '#969696',
   }),
   input: style({
-    height: '38px',
-    padding: '0 10px',
+    padding: '10px 10px',
+    lineHeight: '1',
 
-    borderRadius: '10px',
     backgroundColor: 'rgba(255, 255, 255, .1)',
-    border: 'none',
+    borderRadius: '10px',
     outline: 'none',
+    border: 'none',
     color: '#FFF',
 
     '&::placeholder': {

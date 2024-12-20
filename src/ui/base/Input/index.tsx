@@ -1,5 +1,4 @@
-import {JSX} from 'preact/jsx-runtime'
-import {Ref} from 'preact'
+import {JSX, Ref} from 'preact'
 import {commonCss} from 'styles'
 import {clsx} from 'utils/dom'
 import {css} from './style'
@@ -10,6 +9,7 @@ export interface InputProps {
   type?: 'password' | 'number' | 'email' | 'date'
   autoComplete?: HTMLInputElement['autocomplete']
   label?: string
+  textarea?: boolean
   placeholder?: string
   error?: string
   value?: string
@@ -18,12 +18,29 @@ export interface InputProps {
   onBlur?(): void
 }
 
-export const Input = ({label, error, class: cn, ...rest}: InputProps) => (
-  <div class={clsx(css.wrapper(), cn)}>
-    {label && <div class={css.label()}>{label}</div>}
+export const Input = ({
+  ref,
+  label,
+  error,
+  onChange,
+  class: cn,
+  textarea = false,
+  ...rest
+}: InputProps) => {
+  const Comp = textarea === true ? 'textarea' : 'input'
 
-    <input class={css.input()} {...rest} />
+  return (
+    <div class={clsx(css.wrapper(), cn)}>
+      {label && <div class={css.label()}>{label}</div>}
 
-    {error && <div class={commonCss.error()}>{error}</div>}
-  </div>
-)
+      <Comp
+        ref={ref as any}
+        onChange={onChange as any}
+        class={css.input()}
+        {...rest}
+      />
+
+      {error && <div class={commonCss.error()}>{error}</div>}
+    </div>
+  )
+}

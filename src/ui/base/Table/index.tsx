@@ -1,4 +1,4 @@
-import type {JSX} from 'preact/jsx-runtime'
+import type {JSX} from 'preact'
 import {css} from './style'
 
 export interface Column<T> {
