@@ -5,7 +5,7 @@ import {clsx} from 'utils/dom'
 interface Props {
   class?: string
   maxWidth?: number
-  children: ComponentChildren
+  children?: ComponentChildren
 }
 
 const wrapper = style({
