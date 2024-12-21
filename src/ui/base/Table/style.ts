@@ -1,3 +1,4 @@
+import {commonStyles} from 'styles'
 import {style} from 'styles/css'
 
 export const css = {
@@ -76,5 +77,36 @@ export const css = {
       display: 'flex',
       justifyContent: 'flex-end',
     },
+  }),
+  link: style({cursor: 'pointer'}),
+}
+
+export const mobileCss = {
+  item: style({
+    position: 'relative',
+
+    display: 'flex',
+    flexDirection: 'column',
+    rowGap: '5px',
+
+    '&:not(:last-of-type)': {
+      marginBottom: '40px',
+
+      '&:after': {
+        content: '',
+        position: 'absolute',
+        top: 'calc(100% + 20px)',
+        right: '0',
+        left: '0',
+
+        height: '1px',
+        backgroundColor: 'rgba(255, 255, 255, .1)',
+      },
+    },
+  }),
+  label: style({
+    ...commonStyles.label,
+    marginLeft: '0',
+    marginBottom: '4px',
   }),
 }

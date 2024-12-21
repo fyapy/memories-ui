@@ -1,4 +1,5 @@
-import {useLayoutEffect, EffectCallback, useEffect, Inputs, useRef} from 'preact/hooks'
+import {useLayoutEffect, EffectCallback, useEffect, useState, Inputs, useRef} from 'preact/hooks'
+import {screenXsMobile} from 'styles'
 
 export const useUpdate = (fn: EffectCallback, deps: Inputs = [], layout = false) => {
   const isMount = useRef(true)
@@ -14,17 +15,15 @@ export const useUpdate = (fn: EffectCallback, deps: Inputs = [], layout = false)
   }, deps)
 }
 
-// export const useMedia = (width = screenXsMobile) => {
-//   const getMediaMatch = useCallback(() => window.innerWidth < width - 1, [])
+export function useMedia(width = screenXsMobile) {
+  const [isMatch, setMatch] = useState(window.innerWidth < width - 1)
 
-//   const [isMatch, setMatch] = useState(getMediaMatch())
+  useEffect(() => {
+    const handleResize = () => setMatch(window.innerWidth < width - 1)
 
-//   useEffect(() => {
-//     const handleResize = () => setMatch(getMediaMatch())
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
-//     window.addEventListener('resize', handleResize)
-//     return () => window.removeEventListener('resize', handleResize)
-//   }, [])
-
-//   return isMatch
-// }
+  return isMatch
+}

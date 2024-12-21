@@ -26,3 +26,5 @@ export function style(css: CSSObject) {
     return className
   }
 }
+
+export type {CSSObject} from './types'
