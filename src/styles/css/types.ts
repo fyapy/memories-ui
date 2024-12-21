@@ -2,7 +2,7 @@
 export type OrString = string & {}
 
 export interface CSSProperties {
-  position?: 'absolute' | 'relative'
+  position?: 'absolute' | 'relative' | 'sticky' | 'static' | 'fixed'
   inset?: string
   zIndex?: string
 

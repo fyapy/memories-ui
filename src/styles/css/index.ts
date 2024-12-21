@@ -1,5 +1,6 @@
 
 import {stringify} from './stringify'
+import {EMPTY} from './constants'
 import {CSSObject} from './types'
 import {parser} from './parser'
 
@@ -10,10 +11,10 @@ function insertStyle(innerCSS: string) {
 }
 
 export function style(css: CSSObject) {
-  let className = ''
+  let className = EMPTY
 
   return () => {
-    if (className !== '') {
+    if (className !== EMPTY) {
       return className
     }
 

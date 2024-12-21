@@ -1,14 +1,15 @@
-import {mainClass, IS_MEDIA} from './constants'
+import {mainClass, EMPTY} from './constants'
+import {ParserState} from './parser'
 
 const classes = new Set<string>()
 const offset = 8
 
 export function hash(styles: string) {
-  let className = ''
+  let className = EMPTY
   let startIndex = 0
 
-  while (className === '') {
-    const hashed = btoa(styles).replaceAll('=', '').substring(startIndex, startIndex + offset)
+  while (className === EMPTY) {
+    const hashed = btoa(styles).replaceAll('=', EMPTY).substring(startIndex, startIndex + offset)
 
     if (classes.has(hashed)) {
       startIndex += offset
@@ -21,23 +22,29 @@ export function hash(styles: string) {
   return className
 }
 
-export function stringify(parsed: string[][]) {
-  let className = ''
-  let styles = ''
+export function stringify(state: ParserState) {
+  let className = EMPTY
+  let styles = EMPTY
 
-  parsed.forEach(([css, selector, selector2], index) => {
+  state.parsed.forEach(([css, selector], index) => {
     if (index === 0) {
       className = hash(css)
 
       return styles += `.${className} {${css}}`
     }
 
-    if (selector[0] === IS_MEDIA) {
-      return styles += `${selector} {.${selector2.replace(mainClass, className)} {${css}}}`
-    }
-
     styles += `.${selector.replace(mainClass, className)} {${css}}`
   })
+
+  for (const mediaQuery in state.media) {
+    let mediaStyles = EMPTY
+
+    state.media[mediaQuery].forEach(([css, selector]) => {
+      mediaStyles += `.${selector.replace(mainClass, className)} {${css}}`
+    })
+
+    styles += `${mediaQuery} {${mediaStyles}}`
+  }
 
   return [className, styles]
 }

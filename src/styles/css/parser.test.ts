@@ -25,15 +25,26 @@ describe('style/css/parser', () => {
 
       [media.xsMobile]: {
         zIndex: '0',
+
+        '&:after': {
+          content: '',
+        },
       },
     })
 
-    expect(cssom).toEqual([
-      ['position:relative;zIndex:1;', '`'],
-      ['margin:0 0 10px;padding:0 10px;', '` > *'],
-      ['content:;position:absolute;inset:0;', '` > *:before'],
-      ['zIndex:1;', '@media screen and (max-width: 619px)', '` > *:before'],
-      ['zIndex:0;', '@media screen and (max-width: 619px)', '`'],
-    ])
+    expect(cssom).toEqual({
+      media: {
+        '@media screen and (max-width: 619px)': [
+          ['z-index:1;', '` > *:before'],
+          ['z-index:0;', '`'],
+          ['content:\'\';', '`:after'],
+        ],
+      },
+      parsed: [
+        ['position:relative;z-index:1;', '`'],
+        ['margin:0 0 10px;padding:0 10px;', '` > *'],
+        ['content:\'\';position:absolute;inset:0;', '` > *:before'],
+      ],
+    })
   })
 })
