@@ -1,5 +1,4 @@
 import {style} from './css'
-// import {css as style} from '@stitches/core'
 
 export {style}
 

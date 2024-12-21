@@ -1,4 +1,3 @@
-// import {css as style} from '@stitches/core'
 import {style} from 'styles/css'
 
 export const css = {
