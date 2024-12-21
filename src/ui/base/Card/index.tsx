@@ -1,6 +1,7 @@
 import {ComponentChildren} from 'preact'
-import {media, style} from 'styles'
+import {style} from 'styles/css'
 import {clsx} from 'utils/dom'
+import {media} from 'styles'
 
 interface Props {
   class?: string

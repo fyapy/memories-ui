@@ -1,4 +1,4 @@
-import {style} from 'styles'
+import {style} from 'styles/css'
 
 export const css = {
   wrapper: style({
@@ -7,7 +7,7 @@ export const css = {
 
     display: 'flex',
     flexDirection: 'column',
-    rowGap: 4,
+    rowGap: '4px',
   }),
   link: style({
     height: '46px',
@@ -16,11 +16,11 @@ export const css = {
     display: 'flex',
     alignItems: 'center',
 
-    fontSize: 17,
-    fontWeight: 500,
+    fontSize: '17px',
+    fontWeight: '500',
     cursor: 'pointer',
     color: '#C9CCCF',
-    borderRadius: 10,
+    borderRadius: '10px',
 
     '> div': {
       overflow: 'hidden',

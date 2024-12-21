@@ -1,5 +1,5 @@
 import {ComponentChildren} from 'preact'
-import {style} from 'styles'
+import {style} from 'styles/css'
 
 interface ContainerProps {
   class?: string

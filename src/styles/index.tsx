@@ -1,7 +1,5 @@
-import {css as stitchesStyle} from '@stitches/core'
-
-// Fix TypeScript d.ts generation errors
-const style = stitchesStyle as (styles: Parameters<typeof stitchesStyle>[0]) => () => string
+import {style} from './css'
+// import {css as style} from '@stitches/core'
 
 export {style}
 
