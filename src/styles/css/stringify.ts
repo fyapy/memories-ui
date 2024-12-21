@@ -30,20 +30,20 @@ export function stringify(state: ParserState) {
     if (index === 0) {
       className = hash(css)
 
-      return styles += `.${className} {${css}}`
+      return styles += `.${className}{${css}}`
     }
 
-    styles += `.${selector.replace(mainClass, className)} {${css}}`
+    styles += `.${selector.replace(mainClass, className)}{${css}}`
   })
 
   for (const mediaQuery in state.media) {
     let mediaStyles = EMPTY
 
     state.media[mediaQuery].forEach(([css, selector]) => {
-      mediaStyles += `.${selector.replace(mainClass, className)} {${css}}`
+      mediaStyles += `.${selector.replace(mainClass, className)}{${css}}`
     })
 
-    styles += `${mediaQuery} {${mediaStyles}}`
+    styles += `${mediaQuery}{${mediaStyles}}`
   }
 
   return [className, styles]

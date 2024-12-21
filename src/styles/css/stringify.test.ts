@@ -21,13 +21,13 @@ describe('style/css/stringify', () => {
     expect(stringify(cssom)).toEqual([
       'cG9zaXRp',
       [
-        '.cG9zaXRp {position:relative;z-index:1;}',
-        '.cG9zaXRp > * {margin:0 0 10px;padding:0 10px;}',
-        '.cG9zaXRp > *:before {content:\'\';position:absolute;inset:0;}',
-        `@media screen and (max-width: 619px) {${[
-          '.cG9zaXRp > *:before {z-index:1;}',
-          '.cG9zaXRp {z-index:0;}',
-          '.cG9zaXRp:after {content:\'\';}',
+        '.cG9zaXRp{position:relative;z-index:1;}',
+        '.cG9zaXRp > *{margin:0 0 10px;padding:0 10px;}',
+        '.cG9zaXRp > *:before{content:\'\';position:absolute;inset:0;}',
+        `@media screen and (max-width: 619px){${[
+          '.cG9zaXRp > *:before{z-index:1;}',
+          '.cG9zaXRp{z-index:0;}',
+          '.cG9zaXRp:after{content:\'\';}',
         ].join('')}}`,
       ].join(''),
     ])
