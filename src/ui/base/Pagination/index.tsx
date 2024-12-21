@@ -60,9 +60,9 @@ export const Pagination = ({pagin, link, currentPage}: Props) => {
           {prevPage}
         </div>
       )}
-      <data {...props(true, handleRedirect(currentPage))}>
+      <div {...props(true, handleRedirect(currentPage))}>
         {currentPage}
-      </data>
+      </div>
       {nextPage <= pageCount && (
         <div {...props(currentPage === nextPage, handleRedirect(nextPage))}>
           {nextPage}

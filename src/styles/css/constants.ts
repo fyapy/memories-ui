@@ -1,0 +1,7 @@
+export const mainClass = '`'
+export const UNDEFINED = 'undefined'
+export const OBJECT = 'object'
+export const IS_MEDIA = '@'
+export const IS_NESTED = '&'
+export const emptyString = ''
+export const emptyValue = '\'\''

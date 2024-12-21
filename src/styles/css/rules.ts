@@ -1,5 +1,6 @@
 
 export const camelCaseRule: Record<string, string> = {
+  zIndex: 'z-index',
   paddingTop: 'padding-top',
   paddingRight: 'padding-right',
   paddingBottom: 'padding-bottom',
