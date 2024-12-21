@@ -9,12 +9,14 @@ export function hash(styles: string) {
   let startIndex = 0
 
   while (className === EMPTY) {
-    const hashed = btoa(styles).replaceAll('=', EMPTY).substring(startIndex, startIndex + offset)
+    const hash = styles === EMPTY
+      ? Math.random().toString(36).substring(7)
+      : btoa(styles).replaceAll('=', EMPTY).substring(startIndex, startIndex + offset)
 
-    if (classes.has(hashed)) {
+    if (classes.has(hash)) {
       startIndex += offset
     } else {
-      className = hashed
+      className = hash
       classes.add(className)
     }
   }
@@ -29,6 +31,8 @@ export function stringify(state: ParserState) {
   state.parsed.forEach(([css, selector], index) => {
     if (index === 0) {
       className = hash(css)
+
+      if (css === EMPTY) return
 
       return styles += `.${className}{${css}}`
     }

@@ -79,10 +79,7 @@ export const css = {
     },
   }),
   link: style({cursor: 'pointer'}),
-}
-
-export const mobileCss = {
-  item: style({
+  mobileItem: style({
     position: 'relative',
 
     display: 'flex',
@@ -104,7 +101,7 @@ export const mobileCss = {
       },
     },
   }),
-  label: style({
+  mobileLabel: style({
     ...commonStyles.label,
     marginLeft: '0',
     marginBottom: '4px',

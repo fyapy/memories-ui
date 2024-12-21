@@ -2,7 +2,7 @@ import type {JSX} from 'preact'
 import {useMedia} from 'utils/hooks'
 import {useRouter} from 'router'
 import {clsx} from 'utils/dom'
-import {mobileCss, css} from './style'
+import {css} from './style'
 
 export interface Column<T> {
   label: string
@@ -35,11 +35,11 @@ export function Table<T extends Record<string, any>>({link, data, columns, isMob
           <div
             key={item.id || index}
             onClick={typeof link === 'undefined' ? undefined : () => navigate(link(item))}
-            className={clsx(mobileCss.item(), linkClass)}
+            className={clsx(css.mobileItem(), linkClass)}
           >
             {columns.map(column => (
               <div key={column.label}>
-                <div className={mobileCss.label()}>{column.label}</div>
+                <div className={css.mobileLabel()}>{column.label}</div>
                 <div>
                   <div data-right={column.right}>
                     {column.render(item)}

@@ -3,7 +3,7 @@ import {stringify} from './stringify'
 
 describe('style/css/stringify', () => {
   test('parsed css object should be stringifyed', () => {
-    const cssom = {
+    const parsed = {
       media: {
         '@media screen and (max-width: 619px)': [
           ['z-index:1;', '` > *:before'],
@@ -18,7 +18,7 @@ describe('style/css/stringify', () => {
       ],
     }
 
-    expect(stringify(cssom)).toEqual([
+    expect(stringify(parsed)).toEqual([
       'cG9zaXRp',
       [
         '.cG9zaXRp{position:relative;z-index:1;}',
@@ -31,5 +31,19 @@ describe('style/css/stringify', () => {
         ].join('')}}`,
       ].join(''),
     ])
+  })
+
+  test('parsed css object without not nested styles should be stringifyed', () => {
+    const parsed = {
+      media: {},
+      parsed: [
+        ['', '`'],
+        ['cursor:pointer;', '` > *'],
+      ],
+    }
+
+    const [className, styles] = stringify(parsed)
+
+    expect(styles.replace(className, '')).toEqual('. > *{cursor:pointer;}')
   })
 })
