@@ -14,6 +14,7 @@ const article = style({
 
 const links = [
   {to: '/', text: 'Кнопки'},
+  {to: '/forms', text: 'Формы'},
   {to: '/inputs', text: 'Инпуты'},
   {to: '/tables', text: 'Таблицы'},
   {onClick: () => console.log('logout'), text: 'Выйти'},

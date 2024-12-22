@@ -10,7 +10,7 @@ const isContainerValue = (value: any) => isObject(value) || Array.isArray(value)
 export const getIn = <T = any>(
   object: Record<string, T>,
   path: string,
-  fallback: T
+  fallback?: T,
 ) => {
   if (!object) {
     return fallback

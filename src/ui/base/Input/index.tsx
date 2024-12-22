@@ -1,3 +1,4 @@
+import type {ReadonlySignal} from '@preact/signals'
 import {JSX, Ref} from 'preact'
 import {commonCss} from 'styles'
 import {clsx} from 'utils/dom'
@@ -11,8 +12,8 @@ export interface InputProps {
   label?: string
   textarea?: boolean
   placeholder?: string
-  error?: string
-  value?: string
+  error?: ReadonlySignal<string> | string
+  value?: ReadonlySignal<string> | string
   class?: string
   onChange?: JSX.GenericEventHandler<HTMLInputElement>
   onBlur?(): void

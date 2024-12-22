@@ -48,7 +48,6 @@ describe('style/css/parser', () => {
     })
   })
 
-
   test('css object should be parsed without not nested styles', () => {
     const parsed = parser({
       '> *': {cursor: 'pointer'},

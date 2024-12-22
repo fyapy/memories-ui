@@ -3,11 +3,11 @@
 To install dependencies:
 
 ```bash
-pnpm install
+bun install
 ```
 
 To run in development:
 
 ```bash
-pnpm dev
+bun dev
 ```

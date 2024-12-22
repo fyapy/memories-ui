@@ -56,7 +56,7 @@ export interface ButtonProps {
   fluid?: boolean
   class?: string
   onClick?(e: MouseEvent): void
-  children: ComponentChildren
+  children?: ComponentChildren
 }
 
 export const Button = ({type = 'submit', class: cn, disabled, children, onClick, margin, fluid}: ButtonProps) => {
