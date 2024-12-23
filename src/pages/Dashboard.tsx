@@ -2,7 +2,7 @@ import {ComponentChildren} from 'preact'
 import {Sidebar} from 'ui/complex'
 import {Container} from 'ui/base'
 import {useRouter} from 'router'
-import {style} from 'styles/css'
+import {style} from 'styles'
 
 const article = style({
   padding: '36px 0 36px 36px',

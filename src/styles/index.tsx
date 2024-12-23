@@ -1,5 +1,6 @@
-import {style} from './css'
+import {CSSObject, style} from './css'
 
+export type {CSSObject}
 export {style}
 
 export const flexColumn = {

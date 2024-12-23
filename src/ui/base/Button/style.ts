@@ -1,5 +1,4 @@
-import {style} from 'styles/css'
-import {center} from 'styles'
+import {center, style} from 'styles'
 
 export const DEFAULT_HEIGHT = 38
 export const DEFAULT_WIDTH = 300

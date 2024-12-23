@@ -1,5 +1,5 @@
 import {useForm, Form} from 'forms'
-import {Button, Card} from 'ui/base'
+import {SelectOption, Button, Select, Card} from 'ui/base'
 import {FieldText} from 'ui/forms'
 
 interface LoginValues {
@@ -10,6 +10,11 @@ const loginValues: LoginValues = {
   login: '',
   password: '',
 }
+
+const loginOptions: SelectOption[] = [
+  {label: 'Email', value: 'e'},
+  {label: 'SSO', value: 'e'},
+]
 
 const LoginForm = () => {
   const form = useForm<LoginValues>({
@@ -25,6 +30,7 @@ const LoginForm = () => {
     <Form {...form} onSubmit={values => console.log('values', values)}>
       <FieldText name="login" label="Логин" />
       <FieldText name="password" label="Пароль" type="password" />
+      <Select label="Тип входа" value={loginOptions[0]} options={loginOptions} />
       <Button>Войти</Button>
     </Form>
   )

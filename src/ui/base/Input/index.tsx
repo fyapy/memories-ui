@@ -29,6 +29,7 @@ export const Input = ({
   ...rest
 }: InputProps) => {
   const Comp = textarea === true ? 'textarea' : 'input'
+  const isHasError = typeof error === 'string' || error?.['value']
 
   return (
     <div class={clsx(css.wrapper(), cn)}>
@@ -41,7 +42,7 @@ export const Input = ({
         {...rest}
       />
 
-      {error && <div class={commonCss.error()}>{error}</div>}
+      {isHasError && <div class={commonCss.error()}>{error}</div>}
     </div>
   )
 }

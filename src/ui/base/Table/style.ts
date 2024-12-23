@@ -1,5 +1,5 @@
 import {commonStyles} from 'styles'
-import {style} from 'styles/css'
+import {style} from 'styles'
 
 export const css = {
   empty: style({

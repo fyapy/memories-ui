@@ -1,4 +1,4 @@
-import {style} from 'styles/css'
+import {style} from 'styles'
 
 export const button = style({
   padding: '0 10px',
