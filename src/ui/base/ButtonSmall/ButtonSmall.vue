@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { button } from './style';
+import {button} from './style'
 
 const props = defineProps<{
   margin?: string
@@ -17,6 +17,6 @@ const emit = defineEmits<{
     :style="typeof margin === 'string' ? `margin:${margin}` : undefined"
     @click="e => emit('click', e)"
   >
-    <slot></slot>
+    <slot />
   </div>
 </template>

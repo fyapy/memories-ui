@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { wrapper } from './style'
+import {wrapper} from './style'
 
 const props = defineProps<{class?: string}>()
 </script>
 
 <template>
   <div :class="[props.class, wrapper()]">
-    <slot></slot>
+    <slot />
   </div>
 </template>

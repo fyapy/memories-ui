@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { wrapper } from './style';
+import {wrapper} from './style'
 
 const props = defineProps<{
   maxWidth?: number
@@ -9,9 +9,9 @@ const props = defineProps<{
 
 <template>
   <div
-    :class="wrapper(), props.class"
+    :class="[wrapper(), props.class]"
     :style="typeof props.maxWidth === 'number' ? `max-width:${props.maxWidth}px;` : undefined"
   >
-    <slot></slot>
+    <slot />
   </div>
 </template>

@@ -5,6 +5,7 @@ import vueParser from 'vue-eslint-parser'
 import ts from 'typescript-eslint'
 
 export default ts.config(
+  {ignores: ['dist/*']},
   ...ts.configs.recommended,
   // vue start
   ...pluginVue.configs['flat/recommended'],
@@ -31,7 +32,6 @@ export default ts.config(
     plugins: {
       '@stylistic/js': stylisticJs,
     },
-    ignores: ['dist'],
     rules: {
       'quotes': ['error', 'single'],
       'object-curly-spacing': 'error',

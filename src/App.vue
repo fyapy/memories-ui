@@ -4,6 +4,6 @@ import Dashboard from './pages/Dashboard.vue'
 
 <template>
   <Dashboard>
-    <RouterView></RouterView>
+    <RouterView />
   </Dashboard>
 </template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useRouter } from 'vue-router';
+import {useRouter} from 'vue-router'
 import {styleAttr, button} from './style'
 
 const props = defineProps<{
@@ -18,7 +18,7 @@ const emit = defineEmits<{
 }>()
 
 function handleClick(e: MouseEvent) {
-  if (/^http/i.test(props.to)) {
+  if (!/^http/i.test(props.to)) {
     e.preventDefault()
     router.push(props.to)
   }
@@ -35,6 +35,6 @@ function handleClick(e: MouseEvent) {
     :class="[button(), props.class]"
     @click="handleClick"
   >
-    <slot></slot>
+    <slot />
   </a>
 </template>

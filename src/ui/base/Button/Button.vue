@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {button, styleAttr} from './style'
+import {styleAttr, button} from './style'
 
 const props = defineProps<{
   type?: 'submit' | 'button'
@@ -24,6 +24,6 @@ const handleClick = (e: MouseEvent) => emits('click', e)
     :class="[button(), props.class]"
     @click="handleClick"
   >
-    <slot></slot>
+    <slot />
   </button>
 </template>
