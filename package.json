@@ -1,6 +1,6 @@
 {
   "name": "memories-ui",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "types": "./lib.ts",
   "module": "./lib.ts",
   "devDependencies": {
@@ -28,6 +28,7 @@
   "scripts": {
     "dev": "vite",
     "build": "bun build.ts",
+    "release": "bun release.ts",
     "types": "vue-tsc -b --noEmit",
     "test": "vitest run",
     "lint": "eslint ."
