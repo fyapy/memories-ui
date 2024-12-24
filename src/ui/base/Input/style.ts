@@ -1,4 +1,4 @@
-import {style} from '../../../styles/css'
+import {style} from '../../../css'
 
 export interface InputProps {
   modelValue?: string

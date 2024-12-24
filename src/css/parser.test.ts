@@ -1,6 +1,6 @@
 import {describe, expect, test} from 'vitest'
 import {parser} from './parser'
-import {media} from '../index'
+import {media} from '../styles'
 
 describe('style/css/parser', () => {
   test('css object should be parsed', () => {
