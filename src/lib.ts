@@ -1,3 +1,6 @@
+export * from './utils/localstorage'
+export * from './utils/decorators'
+export * from './utils/object'
 export * from './ui/complex'
 export * from './styles/css'
 export * from './ui/base'
