@@ -1,4 +1,4 @@
-import type {AnyObject} from 'utils/object'
+import type {AnyObject} from '../utils/object'
 
 export type SubmissionHandler<TValues extends AnyObject> = (
   values: TValues,
@@ -12,3 +12,6 @@ export interface FormOptions<TValues extends AnyObject, Errors = Partial<Record<
   initialValues: TValues
   validate?(values: TValues, errors: Errors): Promise<Errors> | Errors
 }
+
+export const FormContextKey = Symbol('form-context')
+export const FieldContextKey = Symbol('field-context')

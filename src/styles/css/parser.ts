@@ -1,6 +1,6 @@
+import type {CSSObject} from './types'
 import {EMPTY_STRING, UNDEFINED, mainClass, IS_NESTED, IS_MEDIA, OBJECT, EMPTY, COMMA} from './constants'
 import {camelCaseRule} from './rules'
-import {CSSObject} from './types'
 
 export interface ParserState {
   parsed: string[][];

@@ -1,4 +1,4 @@
-import {style} from 'styles'
+import {style} from '../../../styles/css'
 
 export const css = {
   wrapper: style({

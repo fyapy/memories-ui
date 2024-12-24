@@ -1,5 +1,4 @@
-import {commonStyles} from 'styles'
-import {style} from 'styles'
+import {commonStyles, style} from '../../../styles'
 
 export const css = {
   empty: style({

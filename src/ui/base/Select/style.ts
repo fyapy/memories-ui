@@ -1,4 +1,4 @@
-import {alignCenter, flexColumn, style} from 'styles'
+import {alignCenter, flexColumn, style} from '../../../styles'
 
 export const css = {
   wrapper: style({

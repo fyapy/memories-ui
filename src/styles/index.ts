@@ -1,4 +1,5 @@
-import {CSSObject, style} from './css'
+import type {CSSObject} from './css'
+import {style} from './css'
 
 export type {CSSObject}
 export {style}

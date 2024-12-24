@@ -1,5 +1,5 @@
+import type {ParserState} from './parser'
 import {mainClass, EMPTY} from './constants'
-import {ParserState} from './parser'
 
 const classes = new Set<string>()
 const offset = 8

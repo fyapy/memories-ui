@@ -1,4 +1,4 @@
-import {AnyObject} from 'utils/object'
+import type {AnyObject} from '../utils/object'
 
 const primitives = ['boolean', 'string', 'number']
 

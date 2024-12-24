@@ -1,5 +1,6 @@
 export * from './ButtonSmall'
 export * from './Pagination'
+export type * from './types'
 export * from './Container'
 export * from './Button'
 export * from './Select'

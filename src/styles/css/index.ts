@@ -1,7 +1,7 @@
 
+import type {CSSObject} from './types'
 import {stringify} from './stringify'
 import {EMPTY} from './constants'
-import {CSSObject} from './types'
 import {parser} from './parser'
 
 function insertStyle(innerCSS: string) {

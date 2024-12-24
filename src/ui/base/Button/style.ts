@@ -1,4 +1,4 @@
-import {center, style} from 'styles'
+import {center, style} from '../../../styles'
 
 export const DEFAULT_HEIGHT = 38
 export const DEFAULT_WIDTH = 300
@@ -8,7 +8,15 @@ export const buttonColor = {
   primary: '#FF8C02',
   hover: 'rgba(255, 140, 2, .5)',
   disabled: 'rgba(255, 255, 255, .1)',
-  boxShadow: 'rgba(255, 117, 73, .4)',
+}
+
+export function styleAttr(margin?: string, fluid?: boolean) {
+  let style = ''
+
+  if (fluid === true) style += 'max-width:initial;'
+  if (typeof margin === 'string') style += `margin:${margin};`
+
+  return style
 }
 
 export const button = style({
@@ -26,7 +34,7 @@ export const button = style({
   cursor: 'pointer',
   color: buttonColor.text,
   borderRadius: '10px',
-  boxShadow: `0px 1px 10px 0px ${buttonColor.boxShadow}`,
+  border: `1px solid ${buttonColor.primary}`,
 
   transition: 'all .3s ease',
 

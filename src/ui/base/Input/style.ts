@@ -1,4 +1,16 @@
-import {style} from 'styles'
+import {style} from '../../../styles/css'
+
+export interface InputProps {
+  name?: string
+  type?: 'password' | 'number' | 'email' | 'date'
+  autoComplete?: HTMLInputElement['autocomplete']
+  label?: string
+  textarea?: boolean
+  placeholder?: string
+  error?: string
+  value?: string
+  class?: string
+}
 
 export const css = {
   wrapper: style({
