@@ -24,11 +24,10 @@ export function useField<TValue = string>(name: string, options = defaultOptions
   const error = computed(() => touched.value ? getIn(form.errors.value, name) : undefined)
   const value = computed<TValue>({
     get() {
-      console.log('')
       return getIn(form.values.value, name) as TValue
     },
-    set(newVal) {
-      setValue(newVal)
+    set(newValue) {
+      setValue(newValue)
     },
   }) as Ref<TValue>
 

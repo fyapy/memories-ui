@@ -4,10 +4,14 @@ export interface PaginationState {
   total: number
 }
 
-export interface Column {//<T>
+export interface Column {
   maxWidth?: number
   right?: boolean
   label: string
   column: string
-  // render: (row: T) => JSX.Element | string | number | null
+}
+
+export interface SelectOption<T = any> {
+  label: string
+  value: T
 }

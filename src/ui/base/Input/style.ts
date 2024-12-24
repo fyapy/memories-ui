@@ -1,6 +1,7 @@
 import {style} from '../../../styles/css'
 
 export interface InputProps {
+  modelValue?: string
   name?: string
   type?: 'password' | 'number' | 'email' | 'date'
   autoComplete?: HTMLInputElement['autocomplete']
@@ -8,7 +9,6 @@ export interface InputProps {
   textarea?: boolean
   placeholder?: string
   error?: string
-  value?: string
   class?: string
 }
 
@@ -43,7 +43,8 @@ export const css = {
     border: 'none',
     color: '#FFF',
 
-    '&::placeholder': {
+    '&:placeholder': {
+      color: '#757575',
       fontWeight: '500',
     },
   }),

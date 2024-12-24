@@ -6,8 +6,8 @@ import {css} from './style'
 const props = defineProps<InputProps>()
 
 defineEmits<{
-  (e: 'change', val: Event): void
   (e: 'blur', val: FocusEvent): void
+  (e: 'update:modelValue', val: InputProps['modelValue']): void
 }>()
 </script>
 
@@ -22,11 +22,11 @@ defineEmits<{
       :class="css.input()"
       :name="name"
       :type="type"
-      :autocomplete="autoComplete"
+      :value="modelValue"
       :placeholder="placeholder"
-      :value="value"
-      @change="(e: Event) => $emit('change', e)"
+      :autocomplete="autoComplete"
       @blur="(e: FocusEvent) => $emit('blur', e)"
+      @change="(e: Event) => $emit('update:modelValue', (e.currentTarget as HTMLInputElement).value)"
     />
 
     <div v-if="error" :class="commonCss.error()">

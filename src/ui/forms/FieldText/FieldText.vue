@@ -3,20 +3,15 @@ import type {InputProps} from '../../base'
 import {useField} from '../../../forms'
 import {Input} from '../../base'
 
-interface FieldTextProps extends InputProps {
+interface FieldTextProps extends Omit<InputProps, 'modelValue'> {
   name: string
 }
 
 const props = defineProps<FieldTextProps>()
 
-const {error, value, setValue} = useField((props as FieldTextProps).name)
+const {error, value} = useField((props as FieldTextProps).name)
 </script>
 
 <template>
-  <Input
-    v-bind="props"
-    :error="error"
-    :value="value"
-    @change="e => setValue((e.currentTarget as HTMLInputElement).value)"
-  />
+  <Input v-bind="props" v-model="value" :error="error" />
 </template>

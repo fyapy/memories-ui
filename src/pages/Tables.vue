@@ -1,9 +1,6 @@
 <script setup lang="ts">
-import type {Column} from '../ui/base/Pagination'
-import {ButtonSmall} from '../ui/base/ButtonSmall'
-import {Pagination} from '../ui/base/Pagination'
-import {Table} from '../ui/base/Table'
-import {Card} from '../ui/base/Card'
+import type {Column} from '../ui/base'
+import {ButtonSmall, Pagination, Table, Card} from '../ui/base'
 
 const namesData = [
   {id: 1, name: 'Jorge'},

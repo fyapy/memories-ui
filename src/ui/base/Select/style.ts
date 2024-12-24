@@ -1,4 +1,18 @@
+import type {SelectOption} from '../types'
 import {alignCenter, flexColumn, style} from '../../../styles'
+
+export interface SelectProps {
+  label?: string
+  modelValue: SelectOption | null
+  options: SelectOption[]
+  error?: string
+  onChange?(value: SelectOption): void
+  optionToString?(item: SelectOption | null): string
+  disabled?: string
+  class?: string
+}
+
+export const defaultOptionToString = (value: SelectProps['modelValue']) => value?.label
 
 export const css = {
   wrapper: style({
@@ -26,17 +40,16 @@ export const css = {
     },
   }),
   inputIcon: style({
+    position: 'absolute',
+    right: '8px',
+    top: '50%',
+
+    fontSize: '0',
+    transform: 'translateY(-50%)',
+    transition: 'transform .3s ease',
+
     '&[data-open="true"]': {
       transform: 'translateY(-50%) rotate(180deg)',
-    },
-
-    '> svg': {
-      position: 'absolute',
-      right: '8px',
-      top: '50%',
-
-      transform: 'translateY(-50%)',
-      transition: 'transform .3s ease',
     },
   }),
   disabledInput: style({
@@ -47,7 +60,7 @@ export const css = {
     position: 'absolute',
     right: '0',
     left: '0',
-    top: 'calc(100% + 4px)',
+    top: 'calc(38px + 4px)',
     zIndex: '10',
 
     ...flexColumn,
@@ -77,22 +90,8 @@ export const css = {
       borderBottomRightRadius: '10px',
     },
 
-    // '&[data-disabled="true"]': {
-    //   pointerEvents: 'none',
-    //   backgroundColor: '#1C1C1C',
-    //   opacity: '.3',
-    // },
     '&:hover': {
       borderColor: '#FF8C02',
     },
   }),
-  // disabledText: style({
-  //   position: 'absolute',
-  //   right: '10px',
-  //   top: '50%',
-
-  //   fontSize: '11px',
-
-  //   transform: 'translateY(-50%)',
-  // }),
 }

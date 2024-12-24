@@ -48,6 +48,7 @@ export interface CSSProperties {
   overflowY?: 'hidden' | 'scroll' | 'auto'
   scrollBehavior?: 'smooth'
   pointerEvents?: 'none'
+  userSelect?: 'none'
   resize?: 'none'
 
   outline?: OrString | 'none'

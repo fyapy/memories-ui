@@ -30,6 +30,7 @@ export const camelCaseRule: Record<string, string> = {
   overflowY: 'overflow-y',
   scrollBehavior: 'scroll-behavior',
   pointerEvents: 'pointer-events',
+  userSelect: 'user-select',
   borderColor: 'border-color',
   borderSpacing: 'border-spacing',
   borderRadius: 'border-radius',

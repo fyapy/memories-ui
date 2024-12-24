@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import {Button, ButtonLink} from '../ui/base/Button'
-import {Card} from '../ui/base/Card'
+import {ButtonLink, Button, Card} from '../ui/base'
 </script>
 
 <template>

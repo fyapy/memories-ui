@@ -1,4 +1,4 @@
-import {onMounted, provide, inject, ref} from 'vue'
+import {onMounted, provide, inject, toRaw, ref} from 'vue'
 import type {SubmissionHandler, FormOptions} from './types'
 import type {AnyObject} from '../utils/object'
 import {FormContextKey} from './types'
@@ -36,7 +36,7 @@ export function useForm<TValues extends AnyObject>({initialValues, validate}: Fo
 
     isSubmitting.value = true
     validateForm()
-      .then(valid => valid && fn(values.value, {setFieldError, reset}))
+      .then(valid => valid && fn(toRaw(values.value), {setFieldError, reset}))
       .catch(() => {})
       .finally(() => isSubmitting.value = false)
   }

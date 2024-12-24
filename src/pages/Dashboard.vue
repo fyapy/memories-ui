@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import Container from '../ui/base/Container/Container.vue'
+import {Sidebar} from '../ui/complex'
+import {Container} from '../ui/base'
 import {style} from '../styles/css'
-import Sidebar from '../ui/complex/Sidebar/Sidebar.vue';
 
 const article = style({
   padding: '36px 0 36px 36px',
@@ -25,7 +25,7 @@ const links = [
     <Sidebar :links="links" />
 
     <div :class="article()">
-      <slot></slot>
+      <slot />
     </div>
   </Container>
 </template>

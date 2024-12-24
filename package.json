@@ -1,6 +1,7 @@
 {
   "name": "memories-ui",
-  "version": "0.0.2",
+  "version": "0.0.3",
+  "types": "./lib.ts",
   "module": "./lib.ts",
   "devDependencies": {
     "@stylistic/eslint-plugin-js": "2.12.1",
