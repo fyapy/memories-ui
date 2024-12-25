@@ -23,5 +23,6 @@ for (const copy of toCopy) {
 }
 
 fs.cpSync('./package.json', './dist/package.json')
+fs.cpSync('./readme.md', './dist/readme.md')
 
 console.log('Build finished')
