@@ -22,7 +22,11 @@ for (const copy of toCopy) {
   )
 }
 
-fs.cpSync('./package.json', './dist/package.json')
+const json = JSON.parse(fs.readFileSync('./package.json', 'utf-8'))
+delete json['scripts']
+delete json['devDependencies']
+fs.writeFileSync('./dist/package.json', JSON.stringify(json))
+
 fs.cpSync('./readme.md', './dist/readme.md')
 
 console.log('Build finished')
