@@ -1,33 +1,23 @@
 import perfectionist from 'eslint-plugin-perfectionist'
 import stylisticJs from '@stylistic/eslint-plugin-js'
 import pluginVue from 'eslint-plugin-vue'
-import vueParser from 'vue-eslint-parser'
 import ts from 'typescript-eslint'
 
 export default ts.config(
   {ignores: ['dist/*']},
   ...ts.configs.recommended,
-  // vue start
-  ...pluginVue.configs['flat/recommended'],
+  perfectionist.configs['recommended-line-length'],
   {
-    files: ['**/*.vue'],
+    extends: pluginVue.configs['flat/recommended'],
     languageOptions: {
-      parser: vueParser,
-      parserOptions: {
-        sourceType: 'module',
-        parser: {ts: ts.parser},
-      },
+      parserOptions: {parser: {ts: ts.parser}},
     },
-  },
-  {
     rules: {
       'vue/max-attributes-per-line': 'off',
       'vue/multi-word-component-names': 'off',
       'vue/singleline-html-element-content-newline': 'off',
     },
   },
-  // vue end
-  perfectionist.configs['recommended-line-length'],
   {
     plugins: {
       '@stylistic/js': stylisticJs,
