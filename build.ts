@@ -9,12 +9,12 @@ if (fs.existsSync('./dist')) {
 }
 
 const toCopy = Array.from(new Glob('**/*').scanSync('./src'))
-const ignoreFiles = ['App.vue', 'routes.ts', 'main.ts', 'vite-env.d.ts']
+const ignoreFiles = new Set<string>(['vite-env.d.ts', 'routes.ts', 'App.vue', 'main.ts'])
 
 for (const copy of toCopy) {
   if (copy.startsWith('pages')) continue
   if (copy.endsWith('.test.ts')) continue
-  if (ignoreFiles.includes(copy)) continue
+  if (ignoreFiles.has(copy)) continue
 
   fs.cpSync(
     join('./src', copy),
