@@ -1,11 +1,11 @@
 {
   "name": "memories-ui",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "types": "./lib.ts",
   "module": "./lib.ts",
   "devDependencies": {
     "@stylistic/eslint-plugin-js": "2.12.1",
-    "@stylistic/eslint-plugin-ts": "^2.12.1",
+    "@stylistic/eslint-plugin-ts": "2.12.1",
     "@types/bun": "1.1.14",
     "@vitejs/plugin-vue": "5.2.1",
     "@vue/tsconfig": "0.7.0",
@@ -36,11 +36,11 @@
   },
   "type": "module",
   "dependencies": {
-    "@editorjs/editorjs": "^2.30.7",
-    "@editorjs/header": "^2.8.8",
-    "@editorjs/link": "^2.6.2",
-    "@editorjs/list": "^2.0.2",
-    "@editorjs/paragraph": "^2.11.7",
-    "@editorjs/underline": "^1.2.1"
+    "@editorjs/editorjs": "2.30.7",
+    "@editorjs/header": "2.8.8",
+    "@editorjs/image": "2.10.1",
+    "@editorjs/list": "2.0.2",
+    "@editorjs/paragraph": "2.11.7",
+    "@editorjs/underline": "1.2.1"
   }
 }

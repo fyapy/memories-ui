@@ -1,5 +1,6 @@
 import Underline from '@editorjs/underline'
 import Paragraph from '@editorjs/paragraph'
+import ImageTool from '@editorjs/image'
 import Header from '@editorjs/header'
 import List from '@editorjs/list'
 import {style} from '../../../css'
@@ -14,6 +15,10 @@ export const tools = {
   },
   underline: Underline as any,
   paragraph: {class: Paragraph as any, inlineToolbar: true},
+  image: {
+    class: ImageTool,
+    config: {endpoints: {}},
+  },
 }
 
 export const css = {

@@ -6,6 +6,12 @@
   .codex-editor__redactor {
     padding-bottom: 0 !important;
   }
+  .image-tool .cdx-button {
+    background-color: rgba(255, 255, 255, .1);
+    border-radius: 10px;
+    border: none;
+    color: #969696;
+  }
   .cdx-block,
   .cdx-block i,
   .cdx-block b,
