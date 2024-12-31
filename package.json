@@ -1,6 +1,6 @@
 {
   "name": "memories-ui",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "types": "./lib.ts",
   "module": "./lib.ts",
   "devDependencies": {
@@ -41,6 +41,7 @@
     "@editorjs/image": "2.10.1",
     "@editorjs/list": "2.0.2",
     "@editorjs/paragraph": "2.11.7",
-    "@editorjs/underline": "1.2.1"
+    "@editorjs/underline": "1.2.1",
+    "@stitches/core": "^1.2.8"
   }
 }

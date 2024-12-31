@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {ref} from 'vue'
-import {type SelectOption, Select, Input, Card} from '../ui/base'
+import {type SelectOption, Select, Upload, Input, Card} from '../ui/base'
 
 const options: SelectOption[] = [
   {label: 'Email', value: 'e'},
@@ -16,5 +16,6 @@ const option = ref(options[0])
     <Select v-model="option" :options="options" />
     <Input label="Имя" placeholder="Введите имя" error="Ошибка валидации" />
     <Input label="Описание" placeholder="Введите описание" textarea />
+    <Upload label="Фото профиля" />
   </Card>
 </template>

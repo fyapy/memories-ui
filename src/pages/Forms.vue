@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {FieldSelect, FieldEditor, FieldText} from '../ui/forms'
+import {FieldSelect, FieldEditor, FieldUpdate, FieldText} from '../ui/forms'
 import {type SelectOption, Button, Card} from '../ui/base'
 import {useForm, Form} from '../forms'
 
@@ -38,8 +38,8 @@ const {isSubmitting} = useForm<LoginValues>({
       <FieldText name="login" label="Логин" placeholder="Введите логин" />
       <FieldText name="password" label="Пароль" placeholder="Введите пароль" type="password" />
       <FieldSelect name="type" label="Тип" :options="typeOptions" />
-
       <FieldEditor name="content" label="Блочный редактор" />
+      <FieldUpdate name="files" label="Фото профиля" />
 
       <Button :disabled="isSubmitting">Войти</Button>
     </Form>
