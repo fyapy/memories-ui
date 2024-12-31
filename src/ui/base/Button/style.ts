@@ -7,7 +7,6 @@ export const buttonColor = {
   text: '#FFF',
   primary: '#FF8C02',
   hover: 'rgba(255, 140, 2, .5)',
-  disabled: 'rgba(255, 255, 255, .1)',
 }
 
 export function styleAttr(margin?: string, fluid?: boolean) {
@@ -42,9 +41,8 @@ export const button = style({
     backgroundColor: buttonColor.hover,
   },
   '&:disabled': {
-    boxShadow: 'none',
-    color: buttonColor.disabled,
     cursor: 'default',
+    opacity: '.3',
   },
 
   '> svg': {

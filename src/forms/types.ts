@@ -1,6 +1,6 @@
 import type {AnyObject} from '../utils/object'
 
-export type SubmissionHandler<TValues extends AnyObject> = (
+export type SubmissionHandler<TValues extends AnyObject = AnyObject> = (
   values: TValues,
   ctx: {
     setFieldError(name: string, message: string): void

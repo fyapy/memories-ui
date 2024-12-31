@@ -35,10 +35,10 @@ export const css = {
   }),
   input: style({
     padding: '10px 10px',
-    lineHeight: '1',
 
     backgroundColor: 'rgba(255, 255, 255, .1)',
     borderRadius: '10px',
+    lineHeight: '1',
     outline: 'none',
     border: 'none',
     color: '#FFF',

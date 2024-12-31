@@ -11,6 +11,9 @@ export function useForm<TValues extends AnyObject>({initialValues, validate}: Fo
   const toucheds = ref<AnyObject>({})
   const isSubmitting = ref(false)
 
+  function setSubmitting(value: boolean) {
+    isSubmitting.value = value
+  }
   function setFieldError(name: string, message: string) {
     setIn(errors.value, name, message)
   }
@@ -51,6 +54,7 @@ export function useForm<TValues extends AnyObject>({initialValues, validate}: Fo
     reset,
     handleSubmit,
     setFieldError,
+    setSubmitting,
     validate: validateForm,
   }
 

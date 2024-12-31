@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import type {AnyObject} from '../utils/object'
 import type {SubmissionHandler} from './types'
 import {injectForm} from './useForm'
 
 const props = defineProps<{
-  submit: SubmissionHandler<AnyObject>
+  submit: SubmissionHandler<any>
   class?: string
 }>()
 

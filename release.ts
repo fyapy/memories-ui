@@ -1,4 +1,4 @@
-import './build'
+import './prod'
 import {$} from 'bun'
 
 await $`bun test`

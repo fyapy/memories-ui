@@ -1,6 +1,6 @@
 <script setup lang="ts">
+import {FieldSelect, FieldEditor, FieldText} from '../ui/forms'
 import {type SelectOption, Button, Card} from '../ui/base'
-import {FieldSelect, FieldText} from '../ui/forms'
 import {useForm, Form} from '../forms'
 
 const typeOptions: SelectOption[] = [
@@ -12,14 +12,16 @@ interface LoginValues {
   login: string
   password: string
   type: SelectOption
+  content: any[]
 }
 const loginValues: LoginValues = {
   login: '',
   password: '',
   type: typeOptions[0],
+  content: [],
 }
 
-useForm<LoginValues>({
+const {isSubmitting} = useForm<LoginValues>({
   initialValues: loginValues,
   validate(vals, errors) {
     if (!vals.login) errors.login = 'Поле обязательное'
@@ -32,12 +34,14 @@ useForm<LoginValues>({
 
 <template>
   <Card>
-    <Form :submit="values => console.log('values', values)">
+    <Form :submit="values => console.log('values', isSubmitting, values, values.content)">
       <FieldText name="login" label="Логин" placeholder="Введите логин" />
       <FieldText name="password" label="Пароль" placeholder="Введите пароль" type="password" />
       <FieldSelect name="type" label="Тип" :options="typeOptions" />
 
-      <Button>Войти</Button>
+      <FieldEditor name="content" label="Блочный редактор" />
+
+      <Button :disabled="isSubmitting">Войти</Button>
     </Form>
   </Card>
 </template>

@@ -34,6 +34,7 @@ export function useField<TValue = string>(name: string, options = defaultOptions
   watch(value, form.validate)
 
   return {
+    form,
     error,
     value,
     touched,

@@ -47,19 +47,19 @@ onBeforeUnmount(() => document.removeEventListener('click', handleMissClick))
           <path d="M12 16c-.28 0-.52-.1-.72-.29l-6-6.01c-.47-.47-.47-.94.01-1.41.47-.48.94-.48 1.41-.01l5.3 5.31 5.28-5.3c.47-.4.93-.38 1.36.06.44.43.46.89.06 1.35l-6 6.01c-.2.19-.43.28-.7.29Z" />
         </svg>
       </div>
-    </div>
 
-    <div ref="menu" :class="css.menu()">
-      <template v-if="isOpen">
-        <div
-          v-for="option in options"
-          :key="option.value"
-          :class="css.option()"
-          @click="handleChange(option)"
-        >
-          <span>{{ optionToString(option) }}</span>
-        </div>
-      </template>
+      <div ref="menu" :class="css.menu()" @click.stop>
+        <template v-if="isOpen">
+          <div
+            v-for="option in options"
+            :key="option.value"
+            :class="css.option()"
+            @click="handleChange(option)"
+          >
+            <span>{{ optionToString(option) }}</span>
+          </div>
+        </template>
+      </div>
     </div>
 
     <div v-if="error" :class="commonCss.error()">
