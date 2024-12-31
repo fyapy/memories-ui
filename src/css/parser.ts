@@ -3,8 +3,8 @@ import {EMPTY_STRING, UNDEFINED, mainClass, IS_NESTED, IS_MEDIA, OBJECT, EMPTY, 
 import {camelCaseRule} from './rules'
 
 export interface ParserState {
-  parsed: string[][];
-  media: Record<string, string[][]>;
+  parsed: string[][]
+  media: Record<string, string[][]>
 }
 
 export function parser(css: CSSObject, names = [mainClass], media: ParserState['media'] = {}) {
