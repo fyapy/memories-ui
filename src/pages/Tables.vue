@@ -26,7 +26,7 @@ const namesColumns: Column[] = [
     <Pagination
       :current-page="1"
       link="/tables"
-      :pagin="{hasNext: true, total: 11, limit: 10}"
+      :pagin="{total: 11, limit: 10}"
     />
   </Card>
 </template>

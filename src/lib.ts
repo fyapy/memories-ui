@@ -1,3 +1,5 @@
+import './styles/main.scss'
+
 export * from './utils/localstorage'
 export * from './utils/decorators'
 export * from './utils/normalize'

@@ -1,8 +1,9 @@
 export interface PaginationState {
   limit: number
-  hasNext: boolean
   total: number
 }
+
+export const createPagination = (): PaginationState => ({total: 0, limit: 0})
 
 export interface Column {
   maxWidth?: number
