@@ -13,12 +13,17 @@ const {
 } = defineProps<UploadProps>()
 
 const emit = defineEmits<{
-  (e: 'update:modelValue', files: FileList | null): void
+  (e: 'update:modelValue', files: UploadProps['modelValue']): void
 }>()
 
 function handleChange(e: Event) {
   const files = (e.currentTarget as HTMLInputElement).files
-  emit('update:modelValue', files)
+
+  emit('update:modelValue', multiple
+    ? files
+    : (files?.length
+      ? files[0]
+      : null))
 }
 
 const files = computed(() => modelValue instanceof FileList

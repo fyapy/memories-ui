@@ -13,5 +13,4 @@ export interface FormOptions<TValues extends AnyObject, Errors = Partial<Record<
   validate?(values: TValues, errors: Errors): Promise<Errors> | Errors
 }
 
-export const FormContextKey = Symbol('form-context')
-export const FieldContextKey = Symbol('field-context')
+export const FormContextKey = 'form-ctx'

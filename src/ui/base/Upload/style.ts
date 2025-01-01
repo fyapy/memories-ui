@@ -6,7 +6,7 @@ export interface UploadProps {
   disabled?: boolean
   multiple?: boolean
   placeholder?: string
-  modelValue?: FileList | null
+  modelValue?: FileList | File | null
 }
 
 export const css = {
