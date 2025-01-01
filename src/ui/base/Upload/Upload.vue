@@ -26,13 +26,22 @@ function handleChange(e: Event) {
       : null))
 }
 
-const files = computed(() => modelValue instanceof FileList
-  ? Array.from(modelValue).map(file => ({
-    mb: fixed(file.size / (1024 * 1024)),
-    name: file.name,
-    type: file.type,
-  }))
-  : [])
+const fileToItem = (file: File) => ({
+  mb: fixed(file.size / (1024 * 1024)),
+  name: file.name,
+  type: file.type,
+})
+
+const files = computed(() => {
+  if (modelValue instanceof FileList) {
+    return Array.from(modelValue).map(fileToItem)
+  }
+  if (modelValue instanceof File) {
+    return [fileToItem(modelValue)]
+  }
+
+  return []
+})
 </script>
 
 <template>
