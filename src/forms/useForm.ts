@@ -1,4 +1,4 @@
-import {onMounted, provide, inject, toRaw, ref} from 'vue'
+import {onMounted, provide, inject, toRaw, isRef, watch, ref} from 'vue'
 import type {SubmissionHandler, FormOptions} from './types'
 import type {AnyObject} from '../utils/object'
 import {FormContextKey} from './types'
@@ -6,10 +6,15 @@ import {setIn} from '../utils/object'
 import {markTouched} from './utils'
 
 export function useForm<TValues extends AnyObject>({initialValues, validate}: FormOptions<TValues>) {
-  const values = ref(initialValues)
+  const isComputed = isRef(initialValues)
+  const values = ref(isComputed ? initialValues.value : initialValues)
   const errors = ref<AnyObject>({})
   const toucheds = ref<AnyObject>({})
   const isSubmitting = ref(false)
+
+  if (isComputed) {
+    watch(initialValues, nextValues => values.value = nextValues)
+  }
 
   function setSubmitting(value: boolean) {
     isSubmitting.value = value

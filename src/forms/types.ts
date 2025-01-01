@@ -1,3 +1,4 @@
+import type {ComputedRef} from 'vue'
 import type {AnyObject} from '../utils/object'
 
 export type SubmissionHandler<TValues extends AnyObject = AnyObject> = (
@@ -9,7 +10,7 @@ export type SubmissionHandler<TValues extends AnyObject = AnyObject> = (
 ) => Promise<void> | void
 
 export interface FormOptions<TValues extends AnyObject, Errors = Partial<Record<keyof TValues, undefined | string>>> {
-  initialValues: TValues
+  initialValues: ComputedRef<TValues> | TValues
   validate?(values: TValues, errors: Errors): Promise<Errors> | Errors
 }
 
