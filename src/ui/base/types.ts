@@ -3,8 +3,6 @@ export interface PaginationState {
   total: number
 }
 
-export const createPagination = (): PaginationState => ({total: 0, limit: 0})
-
 export interface Column {
   maxWidth?: number
   right?: boolean

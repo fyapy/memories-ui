@@ -1,4 +1,7 @@
+import type {PaginationState} from '../types'
 import {style} from '../../../styles'
+
+export const createPagination = (): PaginationState => ({total: 0, limit: 0})
 
 export const css = {
   wrapper: style({
