@@ -1,8 +1,8 @@
 <script setup lang="ts" generic="T extends AnyObject = AnyObject">
 import {useRouter} from 'vue-router'
 import {computed} from 'vue'
-import type {AnyObject} from '../../../utils/object'
 import type {Column} from '../types'
+import {type AnyObject, getIn} from '../../../utils/object'
 import {css} from './style'
 
 defineSlots<Record<string, (item: T) => void>>()
@@ -50,7 +50,7 @@ const linkClass = computed(() => typeof props.link === 'undefined' ? undefined :
               @click="typeof link === 'undefined' ? undefined : router.push(link(item))"
             >
               <slot :name="`column(${column.column})`" v-bind="item">
-                {{ item[column.column] }}
+                {{ getIn(item, column.column) }}
               </slot>
             </div>
           </td>
