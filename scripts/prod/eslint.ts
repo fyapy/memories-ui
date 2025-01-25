@@ -26,6 +26,9 @@ export default () => {
     version: json.version,
     module: './index.js',
     type: 'module',
+    exports: {
+      '.': './index.js',
+    },
     dependencies: eslintDeps.reduce((acc, dep) => ({
       [dep]: json.devDependencies[dep],
       ...acc,
