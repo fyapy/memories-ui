@@ -2,6 +2,7 @@ import Underline from '@editorjs/underline'
 import Paragraph from '@editorjs/paragraph'
 import ImageTool from '@editorjs/image'
 import Header from '@editorjs/header'
+import Quote from '@editorjs/quote'
 import List from '@editorjs/list'
 import {style} from '../../../css'
 import '../../../styles/editor.scss'
@@ -13,7 +14,8 @@ export const tools = {
     inlineToolbar: true,
     config: {defaultStyle: 'unordered'},
   },
-  underline: Underline as any,
+  quote: Quote,
+  underline: Underline,
   paragraph: {class: Paragraph as any, inlineToolbar: true},
   image: {
     class: ImageTool,
