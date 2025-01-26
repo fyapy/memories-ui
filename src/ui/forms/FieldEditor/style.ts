@@ -11,7 +11,7 @@ export interface ImageConfig {
       success: 0 | 1
       file: {url: string}
     }>
-    uploadByUrl(url: string): Promise<{
+    uploadByUrl?(url: string): Promise<{
       success: 0 | 1
       file: {url: string}
     }>
