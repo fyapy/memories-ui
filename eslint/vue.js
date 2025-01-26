@@ -10,6 +10,7 @@ export default ts.config(
       parserOptions: {parser: {ts: ts.parser}},
     },
     rules: {
+      'vue/no-v-html': 'off',
       'vue/max-attributes-per-line': 'off',
       'vue/multi-word-component-names': 'off',
       'vue/singleline-html-element-content-newline': 'off',

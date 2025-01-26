@@ -7,7 +7,20 @@ import List from '@editorjs/list'
 import {style} from '../../../css'
 import '../../../styles/editor.scss'
 
-export const tools = {
+interface ImageToolConfig {
+  endpoints?: {
+    byFile?: string
+    byUrl?: string
+  }
+  uploader?: {
+    uploadByFile?(file: File): Promise<{
+      success: 0 | 1
+      file: {url: string}
+    }>
+  }
+}
+
+const tools = {
   header: {class: Header as any, config: {defaultLevel: 3}},
   list: {
     class: List as any,
@@ -19,8 +32,14 @@ export const tools = {
   paragraph: {class: Paragraph as any, inlineToolbar: true},
   image: {
     class: ImageTool,
-    config: {endpoints: {}},
+    config: {} as ImageToolConfig,
   },
+}
+
+export const getEditorTools = () => tools
+
+export function setEditorImageConfig(config: ImageToolConfig) {
+  tools.image.config = config
 }
 
 export const css = {

@@ -2,9 +2,9 @@
 import {onBeforeUnmount, useTemplateRef, onMounted, watch, toRaw} from 'vue'
 import EditorJS from '@editorjs/editorjs'
 import {jsonParse} from '../../../utils/normalize'
+import {getEditorTools, css} from './style'
 import {commonCss} from '../../../styles'
 import {useField} from '../../../forms'
-import {tools, css} from './style'
 
 const props = defineProps<{
   name: string
@@ -27,7 +27,7 @@ function initEditor() {
     minHeight: 50,
     placeholder: props.placeholder,
     hideToolbar: false,
-    tools,
+    tools: getEditorTools(),
     onChange(editor) {
       form.setSubmitting(true)
 
